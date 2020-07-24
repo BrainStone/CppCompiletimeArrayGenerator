@@ -1,3 +1,5 @@
+#pragma once
+
 #include <cstddef>
 
 template <size_t N, typename T, T (*F)(size_t)>
