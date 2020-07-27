@@ -7,12 +7,12 @@ struct Generator {
   static_assert(N > 0, "N must be greater than 0");
 
  private:
-  template <int M, int... Rest>
+  template <size_t M, T... Rest>
   struct Generator_impl {
     static constexpr const T (&value)[N] = Generator_impl<M - 1, F(M), Rest...>::value;
   };
 
-  template <int... Rest>
+  template <T... Rest>
   struct Generator_impl<0, Rest...> {
     static constexpr const T value[N] = {F(0), Rest...};
   };
